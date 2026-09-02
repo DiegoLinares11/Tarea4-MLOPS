@@ -1,0 +1,47 @@
+[build-system]
+requires = ["hatchling >= 1.26"]
+build-backend = "hatchling.build"
+
+[project]
+name = "act3-pipeline-mlops"
+version = "0.1.0"
+authors = [
+    { name = "Diego Linares", email = "lin221256@uvg.edu.gt" },
+    { name = "Andy Fuentes" },
+    { name = "Christian Echeverria" },
+    { name = "Diederich Solis" },
+]
+description = "Pipeline de scikit-learn con calibracion de hiperparametros sobre datos de la UEFA Champions League"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+license-files = ["LICENSE"]
+keywords = ["scikit-learn", "pipeline", "hyperparameter-tuning", "mlops", "crisp-dm"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+    "Intended Audience :: Education",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+    "scikit-learn>=1.3",
+    "pandas>=2.0",
+    "numpy>=1.24",
+    "scipy>=1.10",
+]
+
+[project.optional-dependencies]
+notebook = ["jupyter", "notebook", "matplotlib"]
+dev = ["pytest>=7", "build", "twine"]
+
+[project.urls]
+Homepage = "https://github.com/DiegoLinares11/Actividad3-MLOPS"
+Repository = "https://github.com/DiegoLinares11/Actividad3-MLOPS"
+
+[project.scripts]
+act3-demo = "act3_pipeline.cli:main"
+
+# El nombre de la distribucion (act3-pipeline-mlops) no coincide con el del paquete
+# (act3_pipeline), asi que hay que decirle a hatchling donde buscarlo.
+[tool.hatch.build.targets.wheel]
+packages = ["src/act3_pipeline"]
