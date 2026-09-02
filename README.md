@@ -6,6 +6,9 @@ Universidad del Valle de Guatemala.
 
 Diego Linares - Andy Fuentes - Christian Echeverria - Diederich Solis
 
+El documento de la tarea, con los pasos y la reflexion sobre empaquetado, esta en
+[Tarea4_MLOPS.pdf](Tarea4_MLOPS.pdf).
+
 ## Instalacion desde TestPyPI
 
 TestPyPI no tiene las dependencias cientificas (scikit-learn, pandas), asi que hay que
